@@ -39,4 +39,4 @@ Logic: This is where all our business logic takes place.
 Database: Our database is simply a storage mechanism, ideally you don't assign any logical responsibilities.
 
 
-**To get right to it and see how tht implementation of such system looks like browse to index.php
+**To get right to it and see how the implementation of such system looks like browse to index.php

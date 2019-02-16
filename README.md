@@ -17,7 +17,7 @@ This project intends to demonstrate in simple terms how one can achieve the foll
 	
     -Organization of system
     
-It's been a while since I coded in PHP and most of my experience has been in smaller scale projects. 
+It's been a while since I coded in PHP and most of my PHP experience has been in smaller scale projects. 
 The majority of my enterprise level experience designing systems has been using the traditional .NET framework. 
 As a coding exercise, I wanted to see what approach I could take in designing a system in PHP for a large scale environment. 
 A large enterprise system could be composed of many other components responsible for different roles such as security. 

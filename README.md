@@ -32,9 +32,9 @@ Core\Entities: This will host all entities that our system uses to communicate. 
 Data:  
     This will host all objects responsible for persisting entities to the database. 
     It is important to note that its sole responsibility is performing simple data operations.
-    no business logic is desired in this layer.
+    No business logic is desired in this layer.
     
-Logic: This is where all our business logic takes place. 
+Logic: This is where all business logic takes place. 
 
 Database: Our database is simply a storage mechanism, ideally you don't assign any logical responsibilities.
 

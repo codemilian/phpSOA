@@ -2,13 +2,21 @@ Roberto Milian 2019
 Seed demo of SOA architecture using PHP
 
 This project intends to demonstrate in simple terms how one can achieve the following:
+
     -Simplicity of code
+    
     -Readability
+    
     -Maintainability
+    
     -Code reuse
+    
     -Separation of concerns
+    
 	-logic layer, database layer, database
+	
     -Organization of system
+    
 It's been a while since I coded in PHP and most of my experience has been in smaller scale projects. 
 The majority of my enterprise level experience designing systems has been using the traditional .NET framework. 
 As a coding exercise, I wanted to see what approach I could take in designing a system in PHP for a large scale environment. 

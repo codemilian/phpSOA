@@ -24,13 +24,19 @@ A large enterprise system could be composed of many other components responsible
 For purposes of this project, I will keep things simple, but this project should stimulate the mind of where additions can be added as needed.
 
 The following project structure and namespaces exists:
+
 Core: This is to host major components consider core functionality to our project
+
 Core\Entities: This will host all entities that our system uses to communicate. These entities are to be kept simple with limited functionality if any.
+
 Data:  
     This will host all objects responsible for persisting entities to the database. 
     It is important to note that its sole responsibility is performing simple data operations.
     no business logic is desired in this layer.
+    
 Logic: This is where all our business logic takes place. 
+
 Database: Our database is simply a storage mechanism, ideally you don't assign any logical responsibilities.
+
 
 **To get right to it and see how tht implementation of such system looks like browse to index.php

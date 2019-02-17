@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^/api/users/ /api/users/index.php
+RewriteRule api/users api/users/index.php

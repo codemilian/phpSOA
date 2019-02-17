@@ -14,7 +14,14 @@ class users {
     //Gets a user object based on the given id
     public function get($id)
     {
-        return $this->usersDbStororage->getById($id);
+        if($id==null)
+        {
+            return $this->usersDbStororage->getAll();
+        }
+        else{
+            return $this->usersDbStororage->getById($id);
+        }
+ 
     }
     
     //Save the given user object

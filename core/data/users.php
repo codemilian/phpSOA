@@ -87,6 +87,36 @@ class users
         }
     }
 
+    public function getAll()
+    {      
+        $results = [];  
+        $sql = "
+            SELECT id,firstname,lastname,email,password FROM users
+        ";
+
+        $db = \core\databaseUtilities\getDbConnection();
+
+        $sqlPrepared = $db->prepare($sql);
+
+        $sqlPrepared->execute();
+
+        $sqlPrepared->bind_result($id,$firstName,$lastName,$email,$password);
+
+        while ($sqlPrepared->fetch()) {
+            $foundRecord = new \core\entities\user();
+            $foundRecord->id = $id;
+            $foundRecord->firstName = $firstName;
+            $foundRecord->lastName = $lastName;
+            $foundRecord->email = $email;
+            $foundRecord->password = $password;
+            array_push($results,$foundRecord);
+        }
+
+        return $results;
+    }
+
+
+
     public function existBasedOnId($id)
     {       
         $sql = "

@@ -2,7 +2,16 @@
 ini_set('display_errors', false);
 $method = $_SERVER['REQUEST_METHOD'];
 $requestUrl = $_SERVER['REQUEST_URI'];
-$urlParts = parse_url($requestUrl);
+$urlParts = explode("/",$requestUrl);
+$id = null;
+if(sizeof($urlParts)>3)
+{
+    $id = $urlParts[4];
+    if($id=="")
+    {
+        $id = null;
+    }
+}
 include("../../core/core.php");
 
 global $serviceManager;
@@ -37,9 +46,8 @@ else if ($method === 'PUT') {
 }
 else if ($method === 'GET') {
     try {
-        $id = $requestParts[0];
-        $user = $serviceManager->users->get($id);
-        $json = json_encode($user);
+        $records = $serviceManager->users->get($id);
+        $json = json_encode($records);
         header('HTTP/1.1 200 OK', true, 200);
         header('Content-Type: text/json');
         echo $json;

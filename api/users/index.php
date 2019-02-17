@@ -4,6 +4,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $requestUrl = $_SERVER['REQUEST_URI'];
 $urlParts = explode("/",$requestUrl);
 $id = null;
+//Getting restful URL argument(s)
 if(sizeof($urlParts)>3)
 {
     $id = $urlParts[4];
@@ -16,7 +17,7 @@ include("../../core/core.php");
 
 global $serviceManager;
 
-if ($method === 'POST') {
+if ($method === 'POST') { //Creates a new user
     try {
         $entityBody = file_get_contents('php://input');
         $user = json_decode($entityBody);
@@ -30,7 +31,7 @@ if ($method === 'POST') {
         echo "Unable to create user";
     }
 }
-else if ($method === 'PUT') {
+else if ($method === 'PUT') {//Updates user based on the id of the object
     try {
         $entityBody = file_get_contents('php://input');
         $user = json_decode($entityBody);
@@ -44,7 +45,7 @@ else if ($method === 'PUT') {
         echo "Unable to update user";
     }
 }
-else if ($method === 'GET') {
+else if ($method === 'GET') { //Gets user based on given id
     try {
         $records = $serviceManager->users->get($id);
         $json = json_encode($records);
@@ -56,7 +57,7 @@ else if ($method === 'GET') {
         echo "Unable to retrieve user(s)";
     }
 }
-else if ($method === 'DELETE') {
+else if ($method === 'DELETE') { //Deletes a user based on given id
     try {
         $records = $serviceManager->users->delete($id);
         $json = json_encode($records);

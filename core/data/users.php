@@ -1,6 +1,6 @@
 <?php
 namespace core\data;
-include("core/databaseUtilities.php"); //reference to a common database utility
+include($applicationFilePath."/core/databaseUtilities.php"); //reference to a common database utility
 
 //responsible for converting our custom entity into a record(s) in our relational database
 class users

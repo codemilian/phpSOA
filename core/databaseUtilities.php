@@ -5,7 +5,7 @@ namespace core\databaseUtilities;
 function getDbConnection()
 {
     //store this information out of source code to avoid checking this in to an external storage
-    $dbUsername = "roberto";
+    $dbUsername = "root";
     $dbPassword = "password";
     $dbServer = "localhost";
     $dbName = "test";

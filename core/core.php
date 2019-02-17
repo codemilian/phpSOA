@@ -1,7 +1,9 @@
 <?php
 namespace core;
-include("logic/users.php");
-include("core/entities/user.php");
+
+include("settings.php");
+include($applicationFilePath."/logic/users.php");
+include($applicationFilePath."/core/entities/user.php");
 
 class serviceManager{
     public $users = null;

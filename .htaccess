@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^/api/users/ /api/users/index.php

@@ -2,6 +2,7 @@
 ini_set('display_errors', false);
 $method = $_SERVER['REQUEST_METHOD'];
 $requestUrl = $_SERVER['REQUEST_URI'];
+$urlParts = parse_url($requestUrl);
 include("../../core/core.php");
 
 global $serviceManager;
@@ -20,7 +21,7 @@ if ($method === 'POST') {
         echo "Unable to create user";
     }
 }
-if ($method === 'PUT') {
+else if ($method === 'PUT') {
     try {
         $entityBody = file_get_contents('php://input');
         $user = json_decode($entityBody);
@@ -34,4 +35,16 @@ if ($method === 'PUT') {
         echo "Unable to update user";
     }
 }
-
+else if ($method === 'GET') {
+    try {
+        $id = $requestParts[0];
+        $user = $serviceManager->users->get($id);
+        $json = json_encode($user);
+        header('HTTP/1.1 200 OK', true, 200);
+        header('Content-Type: text/json');
+        echo $json;
+    } catch (\Throwable $e) {
+        header('HTTP/1.1 400 Bad Request', true, 400);
+        echo "Unable to update user";
+    }
+}

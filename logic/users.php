@@ -19,9 +19,27 @@ class users {
             return $this->usersDbStororage->getAll();
         }
         else{
-            return $this->usersDbStororage->getById($id);
+            $user =  $this->usersDbStororage->getById($id);
+            if($user==null)
+            {
+                throw new \Exception("Unable to retrieve user record, a record with id ".$id." does not exists"); 
+            }
+            else{
+                return $user;
+            }
         }
- 
+    }
+
+    //Delete a record based on Id
+    public function delete($id)
+    {
+        if (!$this->usersDbStororage->existBasedOnId($id)) {
+            throw new \Exception("Unable to delete user record, a record with id ".$id." does not exists"); 
+        }
+        else {
+            return $this->usersDbStororage->delete($id); 
+        } 
+
     }
     
     //Save the given user object

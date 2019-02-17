@@ -56,3 +56,15 @@ else if ($method === 'GET') {
         echo "Unable to retrieve user(s)";
     }
 }
+else if ($method === 'DELETE') {
+    try {
+        $records = $serviceManager->users->delete($id);
+        $json = json_encode($records);
+        header('HTTP/1.1 204 Deleted', true, 204);
+        header('Content-Type: text/json');
+        echo $json;
+    } catch (\Throwable $e) {
+        header('HTTP/1.1 400 Bad Request', true, 400);
+        echo "Unable to delete user";
+    }
+}

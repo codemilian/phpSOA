@@ -167,4 +167,20 @@ class users
         }
     }
 
+    public function delete($id)
+    {       
+        $sql = "
+            DELETE FROM users WHERE id = ?
+        ";
+
+        $db = \core\databaseUtilities\getDbConnection();
+
+        $sqlPrepared = $db->prepare($sql);
+
+        $sqlPrepared->bind_param("s",$id);
+
+        $sqlPrepared->execute();
+
+    }
+
 }

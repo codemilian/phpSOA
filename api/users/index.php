@@ -26,7 +26,7 @@ if ($method === 'PUT') {
         $user = json_decode($entityBody);
         $user = $serviceManager->users->update($user);
         $json = json_encode($user);
-        header('HTTP/1.1 201 Created', true, 201);
+        header('HTTP/1.1 200 OK', true, 200);
         header('Content-Type: text/json');
         echo $json;
     } catch (\Throwable $e) {

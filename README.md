@@ -13,7 +13,7 @@ This project intends to demonstrate in simple terms how one can achieve the foll
     
     -Separation of concerns
     
-	-logic layer, database layer, database
+	-API, logic layer, database layer, database
 	
     -Organization of system
     

@@ -25,6 +25,8 @@ For purposes of this project, I will keep things simple, but this project should
 
 The following project structure and namespaces exists:
 
+Restful API: Simple API reusing internal services.
+
 Core: This is to host major components consider core functionality to our project
 
 Core\Entities: This will host all entities that our system uses to communicate. These entities are to be kept simple with limited functionality if any.
@@ -39,4 +41,4 @@ Logic: This is where all business logic takes place.
 Database: Our database is simply a storage mechanism, ideally you don't assign any logical responsibilities.
 
 
-**To get right to it and see how the implementation of such system looks like browse to index.php
+**To get right to it and see how the implementation of such system looks like browse to index.php or take a look at the Restful users API.

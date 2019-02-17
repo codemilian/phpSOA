@@ -53,6 +53,6 @@ else if ($method === 'GET') {
         echo $json;
     } catch (\Throwable $e) {
         header('HTTP/1.1 400 Bad Request', true, 400);
-        echo "Unable to update user";
+        echo "Unable to retrieve user(s)";
     }
 }

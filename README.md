@@ -1,5 +1,6 @@
 Roberto Milian 2019
-Seed demo of SOA architecture using PHP
+Seed Demo
+Service-oriented architecture (SOA) using PHP
 
 This project intends to demonstrate in simple terms how one can achieve the following:
 
@@ -13,8 +14,8 @@ This project intends to demonstrate in simple terms how one can achieve the foll
     
     -Separation of concerns
     
-	-API, logic layer, database layer, database
-	
+    -API, logic layer, database layer, database
+    
     -Organization of system
     
 It's been a while since I coded in PHP and most of my PHP experience has been in smaller scale projects. 
@@ -23,7 +24,7 @@ As a coding exercise, I wanted to see what approach I could take in designing a 
 A large enterprise system could be composed of many other components responsible for different roles such as security. 
 For purposes of this project, I will keep things simple, but this project should stimulate the mind of where additions can be added as needed.
 
-The following project structure and namespaces exists:
+The following project structure and namespaces exist:
 
 Restful API: Simple API reusing internal services.
 

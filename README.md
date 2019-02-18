@@ -28,7 +28,7 @@ The following project structure and namespaces exist:
 
 Restful API: Simple API reusing internal services.
 
-Core: This is to host major components consider core functionality to our project
+Core: This is to host major components considered core functionality to our project
 
 Core\Entities: This will host all entities that our system uses to communicate. These entities are to be kept simple with limited functionality if any.
 

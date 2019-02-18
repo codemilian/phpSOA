@@ -6,7 +6,7 @@ function getDbConnection()
 {
     //store this information out of source code to avoid checking this in to an external storage
     $dbUsername = "root";
-    $dbPassword = "password";
+    $dbPassword = "";
     $dbServer = "localhost";
     $dbName = "test";
     $dbConnection = new \mysqli($dbServer,$dbUsername,$dbPassword,$dbName);

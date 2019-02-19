@@ -1,6 +1,6 @@
 <?php
 namespace core\logic; 
-include($applicationFilePath."/core/data/users.php"); 
+include($applicationFilePath."/core/data/".$storageMode."/users.php"); 
 
 //responsible for all logical operations for the user entity.
 class users {
@@ -82,4 +82,5 @@ class users {
             return $this->usersDbStororage->create($user); 
         }
     }
+
 }

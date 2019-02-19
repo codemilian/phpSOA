@@ -3,7 +3,17 @@
 Roberto Milian 2019
 */
 include("core/core.php");
+$mng = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
+$listdatabases = new MongoDB\Driver\Command(["listDatabases" => 1]);
+$res = $mng->executeCommand("admin", $listdatabases);
+
+$databases = current($res->toArray());
+
+foreach ($databases->databases as $el) {
+
+    echo $el->name . "\n";
+}
 /*
 The service manager can be expanded to cover a wide range of logical operations. 
 In this demo, we will focus on users, but the idea is that as the system grows other logical services can be added such as orders, friendList, wishList, etc

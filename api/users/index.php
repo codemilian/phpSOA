@@ -35,6 +35,7 @@ else if ($method === 'PUT') {//Updates user based on the id of the object
     try {
         $entityBody = file_get_contents('php://input');
         $user = json_decode($entityBody);
+        $user->id = $id;
         $user = $serviceManager->users->update($user);
         $json = json_encode($user);
         header('HTTP/1.1 200 OK', true, 200);

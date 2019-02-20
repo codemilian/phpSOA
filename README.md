@@ -41,5 +41,9 @@ Logic: This is where all business logic takes place.
 
 Database: Our database is simply a storage mechanism, ideally you don't assign any logical responsibilities.
 
+Swapping parts
+Demonstrates how one layer can removed without impact the rest of the app.
+Settings file supports two different database sotrage modes MySQL and MongoDB
+
 
 **To get right to it and see how the implementation of such system looks like browse to index.php or take a look at the Restful users API.

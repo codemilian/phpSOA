@@ -24,3 +24,19 @@ function getDbConnection()
         return $dbConnection;
     }
 }
+
+function getDbClient()
+{
+    global $storageMode;
+    if($storageMode=="mySQL")
+    {
+        throw new \Exception("db client not support for mySQL"); 
+    }
+    else if($storageMode=="mongoDb")
+    {
+        $dbConnection = new \MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $dbConnection->dbName = "test";
+
+        return $dbConnection;
+    }
+}

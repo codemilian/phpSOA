@@ -22,18 +22,27 @@ class users
 
     public function update($user)
     {   
-
+        $id = $user->id;
         $db = \core\databaseUtilities\getDbConnection();
+
+        $filter = [ '_id' => new  \MongoDB\BSON\ObjectID($user->id)];
+
+        unset($user->_id);
+        unset($user->id);
 
         $bulk = new \MongoDB\Driver\BulkWrite;
 
-        $bulk->update([ '_id' => new  \MongoDB\BSON\ObjectID($id)] ,$user);
+        $options=array('multi' => false, 'upsert' => false);
 
+        $bulk->update($filter,$user,$options);
 
         $db->executeBulkWrite($db->dbName.'.users', $bulk);
+
+        $user->_id =new  \MongoDB\BSON\ObjectID($id);
         
         return $user;
     }
+    
 
     public function getById($id)
     {       
@@ -102,17 +111,20 @@ class users
 
     public function delete($id)
     {       
-        $sql = "
-            DELETE FROM users WHERE id = ?
-        ";
-
         $db = \core\databaseUtilities\getDbConnection();
 
-        $sqlPrepared = $db->prepare($sql);
+        $filter = [ '_id' => new  \MongoDB\BSON\ObjectID($id)];
 
-        $sqlPrepared->bind_param("s",$id);
 
-        $sqlPrepared->execute();
+
+        $bulk = new \MongoDB\Driver\BulkWrite;
+
+        $options=array('limit' => 1);
+
+        $bulk->delete($filter,$options);
+
+        $db->executeBulkWrite($db->dbName.'.users', $bulk);
+
 
     }
 
